@@ -14,10 +14,10 @@ def initialise_stocks_database():
         CREATE TABLE IF NOT EXISTS daily_stock_prices (
             ticker TEXT NOT NULL,
             trade_date DATE NOT NULL,
-            open_price DECIMAL(20,6) NOT NULL,
-            high_price DECIMAL(20,6) NOT NULL,
-            low_price DECIMAL(20,6) NOT NULL,
-            close_price DECIMAL(20,6) NOT NULL,
+            open_price NUMERIC(20,6) NOT NULL,
+            high_price NUMERIC(20,6) NOT NULL,
+            low_price NUMERIC(20,6) NOT NULL,
+            close_price NUMERIC(20,6) NOT NULL,
             volume INTEGER NOT NULL,
             fetched_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             PRIMARY KEY(ticker, trade_date)
