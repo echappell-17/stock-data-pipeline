@@ -1,0 +1,28 @@
+name: Scheduled Daily Ingest
+
+on:
+  schedule:
+    - cron: '11 0 * * *'
+  workflow_dispatch:
+
+# Grants the workflow permission to push changes to the repository
+permissions:
+  contents: write
+
+jobs:
+    ingest:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            - name: Set up Python
+              uses: actions/setup-python@v4
+              with:
+                python-version: '3.11'
+
+            - name: Install dependencies
+              run: pip install -r requirements.txt
+
+            - name: Run daily ingestion script
+              run: python daily_ingest.py
