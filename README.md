@@ -147,8 +147,8 @@ docker run -p 8000:8000 stock_data_pipeline
 - Render watches for change to main branch
 - Upon each change Render redeploys the app
 - Available at:
- - `` - HTML table view
- - `` - JSON output (with API key)
+ - `https://stock-data-pipeline-qlf6.onrender.com/prices/table` - HTML table view
+ - `https://stock-data-pipeline-qlf6.onrender.com/prices` - JSON output (with API key)
 
 ### Environment Variables
 
