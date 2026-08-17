@@ -1,5 +1,8 @@
 name: Scheduled Daily Ingest
 
+env:
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
 on:
   schedule:
     - cron: '11 0 * * *'
