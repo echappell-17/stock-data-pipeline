@@ -51,7 +51,6 @@ ingest.py / daily_ingest.py  ──►  daily_stock_prices (PostgreSQL)
 - `ingest.py` defines the function `ingest_stock_data`, which takes a ticker and a period as parameters and inserts the daily OHLCV data for the specified parameters into the `daily_stock_prices` table.
 - `daily_ingest.py` imports `ingest_stock_data` from `ingest.py` and uses it to load data from the previous day for each of the target tickers.
 - `daily_ingest.yml` is a scheduled GitHub workflow which runs `daily_ingest.py` to keep data up to date for the target tickers
-
 yfinance was chosen because it doesn’t require any signup or API key. This meant accepting that yfinance is unofficial so there is no guarantee that it will be maintained. At production scale a more reliable option such as Finnhub or Massive should be chosen depending on budget and requirements.
 ---
 
