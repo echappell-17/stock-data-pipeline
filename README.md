@@ -150,6 +150,12 @@ docker run -p 8000:8000 stock_data_pipeline
  - `https://stock-data-pipeline-qlf6.onrender.com/prices/table` - HTML table view
  - `https://stock-data-pipeline-qlf6.onrender.com/prices` - JSON output (with API key)
 
+### Filters
+- Add `ticker=AAPL` to select only AAPL data (not useful currently as only AAPL is included).
+- Add `start_date=yyyy-mm-dd` to see data on or after the specified date.
+- Add `end_date=yyyy-mm-dd` to see data on or before the specified date.
+- Currently the end date can only be applied if there is a start date specified.
+
 ### Environment Variables
 
 | Variable | Purpose | Default |
@@ -162,7 +168,7 @@ docker run -p 8000:8000 stock_data_pipeline
 - **`docker_build.yml`:** builds the Docker image on every push/PR to `main` as a sanity check (build-only, no deploy step).
 - **Render webhooks** check for changes to the main branch and redeploy the web service.
 
-Although the docker build workflow checks that the Docker image builds correctly, there is no verification of the data being returned by the API.
+Although the docker build workflow checks that the Docker image builds correctly, there is no validation of the data being returned by the API.
 
 ---
 
